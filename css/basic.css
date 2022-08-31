@@ -1,0 +1,421 @@
+@charset "UTF-8";
+
+/* 기본세팅 */
+*{ margin: 0; padding: 0; }
+ul,li{ list-style: none; }
+a{ text-decoration: none; color: #000;}
+img{ border: 0; }
+body{ font-family: '맑은 고딕', sans-serif; }
+.center{
+	width: 1000px;
+	margin: auto;
+}
+
+/* 상단영역 */
+#header_wrap{
+    position: absolute;
+    z-index: 1;
+    background: rgba(15, 15, 15, 0.5);
+    width: 100%;
+    height: 80px;
+}
+header h1{
+    float: left;
+    margin-top: 24px;
+}
+
+/* 메인 내비게이션*/
+header nav{
+    float: right;
+}
+header nav ul{}
+header nav > ul > li{
+    float: left;
+	position: relative;
+    margin-left: 25px;
+}
+header nav > ul > li > a{
+    display: inline-block;
+    line-height: 80px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+header nav ul > li >a:hover{
+    color:rgb(131, 174, 253);
+}
+/* 서브메뉴 */
+.sub{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	padding: 20px;
+	background-color: #fff;
+	display: none;
+}
+.sub:before{
+	display: block;
+	content: "";
+	position: absolute; 
+	/*position:absolute는 block요소*/
+	top: -24px;
+	left: 50%;
+	transform: translate(-50%);
+	border: 12px solid transparent;
+	border-bottom-color: #fff;
+	/* 삼각형 만들기 
+	border: 20px solid transparent;
+	border-bottom(원하는 방향)-color: (색상);
+	*/
+}
+.sub li{
+	margin-bottom: 5px;
+}
+.sub a{
+	color: #666;
+	font-size: 13px;
+	white-space: nowrap; /*줄바꿈 금지*/
+}
+.sub a:hover{
+	color: #666;
+	text-decoration: underline;
+}
+header nav > ul > li:hover .sub{
+	display: block;
+}
+
+
+/* 메인 슬라이더 */
+#main_slider{
+    width: 100%;
+    /* overflow: hidden; */
+}
+.img_wrap{
+    position: relative;
+    width: 1920px;
+    height: 540px; /*ps은 420이지만 여기선 450으로*/
+    left: 50%;
+    transform: translate(-50%); 
+    /* left:50%으로 기준선이 정가운데에 오게하고
+        transform: translate(-50%)로 이미지의 절반만큼 왼쪽으로 
+        오게해서 이미지의 정가운데가 센터에 오도록 하기 */
+}
+.slider_text{
+    position: absolute;
+    top: 180px;
+    width: 1000px;
+    left: 50%;
+    transform: translate(-50%);
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    letter-spacing: -2px;
+    /* border: 10px solid yellow; */
+}
+.slider_text h3{
+    display: inline-block;
+    font-size: 26px;
+    background-color: rgba(255,255,255,0.3);
+    padding: 3px 5px;
+    margin-bottom: 16px;
+    /*padding 값이 3개(위, 좌우, 아래)*/
+}
+.slider_text p:nth-of-type(1){
+    font-size: 40px ;
+}
+.slider_text p:nth-of-type(2){
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.slider_text a{ /* a태그는 inline태그 */
+    color: #fff;
+    letter-spacing: 0;
+    font-size: 16px;
+    border: 1px solid #fff;
+    padding: 5px 25px;
+    transition: 0.4s;
+}
+.slider_text a:hover{
+    background: rgba(255,255,255,0.3);
+}
+
+
+/* 메인 */
+section{
+    padding: 60px 0;
+}
+main h3{
+    font-size: 30px;
+    font-weight: normal; /*normal = 400*/
+    text-align: center;
+    margin-bottom: 50px;
+	color: rgb(73, 196, 185);
+}
+
+/* section1 */
+.s1 ul{
+	overflow: hidden;
+	/* 자식에 float가 있어 감싸지 못할때 해결하는 방법 중 하나*/
+}
+.s1 li{
+	float: left; /* 부모요소를 감싸지 못하는 특성*/
+	width: 184px;
+	height: 210px;
+	margin-right: 20px;
+	text-align: center;
+	background-color: rgb(73, 196, 185);
+}
+.s1 li:last-child{
+	margin-right: 0;
+}
+.s1 h4{
+	color: #fff;
+	font-size: 20px;
+	margin: 35px 0 20px;
+}
+.s1 a{
+	color: #fff;
+	font-size: 13px;
+	display: block;
+	line-height: 1.6; /*단위 안쓰면 em단위*/
+	letter-spacing: 0.3;
+}
+.s1 a:hover{
+	text-decoration: underline;
+}
+
+/* section2 */
+.s2{
+	background-color: #f1f1f1;
+}
+.s2 div{
+	text-align: center;
+	padding: 20px 0 30px;
+}
+.s2 a{
+	color: #000;
+	line-height: 1.5;
+}
+
+/* section3 */
+.s3{
+	background-color: rgb(73, 196, 185);
+}
+.s3 h3{
+	color: #fff;
+	font-weight: bold;
+}
+.s3 p{
+	color: #fff;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.s3 ul{
+	display: flex;
+	justify-content: space-between;
+}
+.s3 a{ /* a태그는 inline요소*/
+	display: block;
+	width: 310px;
+	line-height: 100px;
+	background-color: #fff;
+	color: #111;
+	font-size: 18px;
+	text-align: center;
+}
+
+/* section4 공통 */
+.s4{
+	overflow: hidden;
+}
+.left, .right{
+	width: 490px;
+}
+.left{
+	box-sizing: border-box;
+	float: left;
+	margin-right: 20px;
+	text-align: center;
+}
+.right{
+	float: right;
+}
+.right h4{
+	font-size: 20px;
+	color: #fff;
+	margin-bottom: 20px;
+}
+/* section4-left*/
+.youtube{
+	height: 280px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.logos{
+	display: inline-block;
+	overflow: hidden;
+}
+.logos li{
+	float: left;
+}
+.logos li:after{
+	display: inline-block;
+	content: "";
+	width: 1px;
+	height: 15px;
+	background-color: #ccc;
+	margin: 10px 15px 0 5px;
+}
+.logos li:last-child:after{
+	background-color: transparent;
+	margin-right: 0;
+}
+.logos a img{
+	vertical-align: middle;
+}
+/* section4-right*/
+.vision{
+	background-color: rgb(35, 88, 84);
+	margin-bottom: 20px;
+	padding: 10px 10px 40px;
+}
+.vision p{
+	color: #bebaba;
+	text-align: center;
+	text-shadow: 1px 1px 5px rgb(114, 114, 114);
+}
+.news_list{
+	position: relative;
+	background-color: rgb(73, 196, 185);
+	padding: 10px;
+}
+.news_list h4{
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	padding-bottom: 12px;
+}
+.news_list a{
+	color: #fff;
+}
+.more{
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	font-size: 13px;
+}
+.news_list li{
+	height: 30px;
+	overflow: hidden;
+}
+.news_list ul a{
+	color: #fff;
+}
+.news_list p:first-child{
+	float: left;
+	font-size: 14px;
+}
+.news_list p.date{
+	float: right;
+	font-size: 12px;
+	opacity: 0.7;
+}
+
+
+/* 하단영역*/
+.footer_wrap{
+	background: #414d53;
+}
+.footer_top{
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	height: 50px;
+}
+.footer_top a{
+	color: #fff;
+}
+.footer_menu{
+	float: left;
+}
+.footer_menu li{
+	float: left;
+	margin-right: 20px;
+}
+.footer_menu li a{
+	font-size: 15px;
+	line-height: 50px;
+}
+.select{
+	float: right;
+	width: 170px;
+	font-size: 12px;
+}
+.select_btn{
+	width: 170px;
+	padding: 5px 10px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	background-color: #2e383e;
+	color: rgb(184, 184, 184);
+	cursor: pointer;
+}
+.select:hover .select_list{ 
+/* +는 바로 아래 자식요소
+	~는 아래 모든 요소*/
+	display: block;
+}
+.select_list{
+	display: none;
+	width: 170px;
+}
+.select_list a{
+	display: block;
+	padding: 10px;
+	color: #666;
+	background-color: #fff;
+	cursor: pointer;
+	transition: .4s;
+}
+.select_list a:hover{
+	background-color: #999999;
+	color: #fff;
+}
+
+/*찐 하단*/
+footer{
+	height: 140px;
+	padding-top: 20px;
+}
+footer h2{
+	float: left;
+	margin-right: 30px;
+}
+.address{
+	float: left;
+	font-size: 14px;
+	margin-right: 40px;
+
+}
+.address p:nth-child(1){
+	color: rgb(213, 231, 230);;
+}
+.address p:nth-child(2){
+	color: rgb(125, 133, 132);;
+}
+.sns{
+	float: left;
+}
+.sns ul{
+	display: flex;
+}
+.sns a{
+	display: inline-block;
+	width: 53px;
+	height: 53px;
+	background-color: #4d5a61;
+	border-radius: 50%;
+	text-align: center;
+	margin-left: 20px;
+}
+.sns img{
+	margin-top: 13px;
+}
